@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/ooalrai.githib.io/todo-app/static/css/main.4726b1d5.css",
-    "main.js": "/ooalrai.githib.io/todo-app/static/js/main.50a78438.js",
-    "index.html": "/ooalrai.githib.io/todo-app/index.html",
-    "main.4726b1d5.css.map": "/ooalrai.githib.io/todo-app/static/css/main.4726b1d5.css.map",
-    "main.50a78438.js.map": "/ooalrai.githib.io/todo-app/static/js/main.50a78438.js.map"
+    "main.css": "/ooalrai.github.io/todo-app/static/css/main.4726b1d5.css",
+    "main.js": "/ooalrai.github.io/todo-app/static/js/main.50a78438.js",
+    "index.html": "/ooalrai.github.io/todo-app/index.html",
+    "main.4726b1d5.css.map": "/ooalrai.github.io/todo-app/static/css/main.4726b1d5.css.map",
+    "main.50a78438.js.map": "/ooalrai.github.io/todo-app/static/js/main.50a78438.js.map"
   },
   "entrypoints": [
     "static/css/main.4726b1d5.css",
