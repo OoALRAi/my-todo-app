@@ -1,6 +1,5 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import TodoListUI from "./UI/TodoListUI"
-import TodoItem from "./Model/TodoItem"
 import AddItemForm from "./UI/AddItemForm"
 import Settings from "./UI/Settings"
 import StatsBar from "./UI/StatsBar"
@@ -17,20 +16,26 @@ export default function Screen({ currentScreen }) {
     ])
 
     const onItemClicked = (index) => {
-        const item = todoList[index]
-        item.toggle()
         setTodoList(old => {
-            return [...old]
+            const item = old[index]
+            item.isDone = !item.isDone
+            const newList = [...old]
+            saveTodos(todoList)
+            return newList
         })
     }
 
     const onItemAdded = (title) => {
         if (title) {
-            setTodoList(old => [...old, new TodoItem(title)])
-
+            const newList = [...todoList, { title: title, isDone: false }]
+            saveTodos(newList)
+            setTodoList(_ => newList)
         }
-
     }
+
+    useEffect(() => {
+        setTodoList(_ => loadTodos())
+    }, [])
 
     if (currentScreen === Screens.ListScreen) {
         return (<>
@@ -51,3 +56,11 @@ export default function Screen({ currentScreen }) {
     )
 }
 
+
+function saveTodos(todos) {
+    localStorage.setItem("todoList", JSON.stringify(todos))
+}
+
+function loadTodos() {
+    return JSON.parse(localStorage.getItem("todoList")) ?? []
+}
