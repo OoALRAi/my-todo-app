@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ooalrai.github.io/my-todo-app/static/css/main.4726b1d5.css",
+    "main.js": "/ooalrai.github.io/my-todo-app/static/js/main.f9582d22.js",
+    "index.html": "/ooalrai.github.io/my-todo-app/index.html",
+    "main.4726b1d5.css.map": "/ooalrai.github.io/my-todo-app/static/css/main.4726b1d5.css.map",
+    "main.f9582d22.js.map": "/ooalrai.github.io/my-todo-app/static/js/main.f9582d22.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4726b1d5.css",
+    "static/js/main.f9582d22.js"
+  ]
+}
