@@ -3,6 +3,7 @@ import TodoListUI from "./UI/TodoListUI"
 import AddItemForm from "./UI/AddItemForm"
 import Settings from "./UI/Settings"
 import StatsBar from "./UI/StatsBar"
+import TodoListControls from "./UI/TodoListControls"
 
 
 export const Screens = {
@@ -14,6 +15,8 @@ export const Screens = {
 export default function Screen({ currentScreen }) {
     const [todoList, setTodoList] = useState([
     ])
+
+    const [hideDone, setHideDone] = useState(false)
 
     const onItemClicked = (index) => {
         setTodoList(old => {
@@ -33,13 +36,33 @@ export default function Screen({ currentScreen }) {
         }
     }
 
+    const onDeleteAll = () => {
+        setTodoList(_ => [])
+        saveTodos([])
+    }
+    const onHideShowDoneTasks = () => {
+        setHideDone(old => !old)
+    }
+
+
     useEffect(() => {
         setTodoList(_ => loadTodos())
     }, [])
 
     if (currentScreen === Screens.ListScreen) {
         return (<>
-            <TodoListUI todoList={todoList} onItemClicked={onItemClicked}></TodoListUI>
+            <TodoListControls
+                title={"Monday List"}
+                onHideShowDoneTasks={onHideShowDoneTasks}
+                onDeleteAll={onDeleteAll}
+                hideDone={hideDone}
+            ></TodoListControls>
+            <TodoListUI
+                todoList={
+                    !hideDone ? todoList :
+                        todoList.filter(item => !item.isDone)
+                }
+                onItemClicked={onItemClicked}></TodoListUI>
             <StatsBar
                 numTodos={
                     todoList.filter(item => !item.isDone).length
