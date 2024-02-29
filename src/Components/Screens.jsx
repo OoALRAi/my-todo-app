@@ -18,9 +18,8 @@ export default function Screen({ currentScreen }) {
 
     const [hideDone, setHideDone] = useState(false)
 
-    const onItemClicked = (index) => {
+    const onItemClicked = (item) => {
         setTodoList(old => {
-            const item = old[index]
             item.isDone = !item.isDone
             const newList = [...old]
             saveTodos(todoList)
