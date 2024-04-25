@@ -1,28 +1,49 @@
-import { useState } from 'react';
-import Screen from './Components/Screens';
-import { Screens } from './Components/Screens';
-import NavBar from './Components/UI/NavBar';
+import { useReducer } from "react";
 import "./App.css"
-import Sidebar from './Components/UI/Sidebar/Sidebar';
+import Sidebar from "./Components/Sidebar";
+import MainView from "./Components/MainView";
+
+const reducer = (state, action) => {
+    return state
+}
+
+const SidebarActions = {
+    SELECT_LIST: 'select_list',
+    DELECT_LIST: 'delete_list',
+    ADD_LIST: 'add_list',
+}
+
+const initialState = {
+    todo_lists: [
+        {
+            text: 'monday',
+            todos: [
+                {
+                    text: 'do your homework',
+                    isDone: false
+                }
+            ]
+        },
+        {
+            text: 'now or never',
+            todos: [{
+                text: 'go code then',
+                isDone: true
+            }]
+
+        }
+    ]
+
+}
 
 function App() {
-    const [currentScreen, setScreen] = useState(Screens.ListScreen)
 
-    const onScreenChanged = (screen) => {
-        console.log(screen)
-        setScreen(oldScreen => screen)
-    }
-
-
+    const [State, Dispatch] = useReducer(reducer, initialState)
     return (
-        <Sidebar></Sidebar>
-
-        // <div className='todo-app'>
-        //     <div className='todo-app-layout'>
-        //         <NavBar onScreenChanged={onScreenChanged}></NavBar>
-        //         <Screen currentScreen={currentScreen}></Screen>
-        //     </div>
-        // </div>
+        <div className="app-screen">
+            <Sidebar state={State} dispatch={Dispatch}></Sidebar>
+            <MainView todoList={State.todo_lists[0]}></MainView>
+        </div>
     )
 
 }

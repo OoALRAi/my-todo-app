@@ -1,0 +1,33 @@
+.mainview-container {
+    width: 100%;
+    padding: 20px;
+}
+
+/*
+.mainview-container .todo-list-title::before {
+    position: absolute;
+    top: 40px;
+    content: "";
+    opacity: 50%;
+    background-color: yellow;
+    width: 250px;
+    height: 20px;
+    rotate: 3deg;
+}
+*/
+
+.mainview-container .todo-list-title[type=text] {
+    border: none;
+    font-size: 34pt;
+    font-weight: bold;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+}
+
+.mainview-container .todo-list-title[type=text]:focus {
+    border: none;
+    outline: none;
+    outline: none;
+}
