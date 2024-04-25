@@ -1,20 +1,20 @@
+import { SidebarActions } from "../App";
 export default function ListItem({
-    onSelect = () => { },
-    onDelete = () => { },
-    state
+    dispatch,
+    todoList,
 }) {
-    const onListClicked = (e) => {
+    const selectItem = (e) => {
         e.preventDefault();
-        onSelect()
+        dispatch({ type: SidebarActions.SELECT_LIST, data: todoList })
     }
     return (
-        <div onClick={onListClicked}>
+        <div onClick={selectItem}>
             <div>
-                {state && state.text}
+                {todoList && todoList.text}
             </div>
             <div>[
-                {state.todos.filter(e => e.isDone).length}{" "}|{" "}
-                {state.todos.filter(e => !e.isDone).length}
+                {todoList.todos.filter(e => e.isDone).length}{" "}|{" "}
+                {todoList.todos.filter(e => !e.isDone).length}
                 ]
 
             </div>

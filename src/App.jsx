@@ -3,11 +3,8 @@ import "./App.css"
 import Sidebar from "./Components/Sidebar";
 import MainView from "./Components/MainView";
 
-const reducer = (state, action) => {
-    return state
-}
 
-const SidebarActions = {
+export const SidebarActions = {
     SELECT_LIST: 'select_list',
     DELECT_LIST: 'delete_list',
     ADD_LIST: 'add_list',
@@ -32,8 +29,18 @@ const initialState = {
             }]
 
         }
-    ]
+    ],
+    currentList: null
 
+}
+
+const reducer = (state, { type, data }) => {
+    switch (type) {
+        case SidebarActions.SELECT_LIST:
+            return { ...state, currentList: data }
+    }
+
+    return state
 }
 
 function App() {
@@ -42,7 +49,7 @@ function App() {
     return (
         <div className="app-screen">
             <Sidebar state={State} dispatch={Dispatch}></Sidebar>
-            <MainView todoList={State.todo_lists[0]}></MainView>
+            <MainView todoList={State.currentList}></MainView>
         </div>
     )
 

@@ -7,7 +7,9 @@ export default function Sidebar({ OnAddList, state, dispatch }) {
             <button onClick={OnAddList}>add list</button>
             <div className='todo-lists-list'>
                 {state &&
-                    state.todo_lists.map(e => <ListItem state={e}></ListItem>)
+                    state.todo_lists.map(
+                        (todoList, i) => <ListItem key={i} dispatch={dispatch} todoList={todoList}></ListItem>
+                    )
                 }
             </div>
 

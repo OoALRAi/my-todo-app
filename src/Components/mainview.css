@@ -20,14 +20,32 @@
     border: none;
     font-size: 34pt;
     font-weight: bold;
-    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 0px;
+    margin-bottom: 25px;
 }
 
 .mainview-container .todo-list-title[type=text]:focus {
     border: none;
     outline: none;
     outline: none;
+}
+
+.no-list-selected-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.no-list-selected-message {
+    font-size: xx-large;
+    color: gray;
+}
+
+.todo-list-items-container {
+    padding: 16px;
+
 }
