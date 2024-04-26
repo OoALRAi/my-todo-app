@@ -1,6 +1,14 @@
 .mainview-container {
     width: 100%;
-    padding: 20px;
+    height: 100vh;
+    overflow-y: auto;
+    padding-left: 15%;
+    padding-right: 15%;
+    scrollbar-width: none;
+}
+
+.mainview-container::-webkit-scrollbar {
+    width: 0;
 }
 
 /*
@@ -16,16 +24,17 @@
 }
 */
 
-.mainview-container .todo-list-title[type=text] {
+.mainview-container .todo-list-title {
     border: none;
     font-size: 34pt;
     font-weight: bold;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 25px;
+    width: 100%;
 }
 
-.mainview-container .todo-list-title[type=text]:focus {
+.mainview-container .todo-list-title:focus {
     border: none;
     outline: none;
     outline: none;
@@ -47,5 +56,6 @@
 
 .todo-list-items-container {
     padding: 16px;
+    overflow-y: auto;
 
 }

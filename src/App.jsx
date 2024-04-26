@@ -11,25 +11,16 @@ export const SidebarActions = {
 }
 
 const initialState = {
-    todo_lists: [
-        {
-            text: 'monday',
-            todos: [
-                {
-                    text: 'do your homework',
-                    isDone: false
-                }
-            ]
-        },
-        {
-            text: 'now or never',
-            todos: [{
-                text: 'go code then',
-                isDone: true
-            }]
 
-        }
-    ],
+    todo_lists:
+        [...Array(60)].map((e, i) => ({
+            text: `list ${i}`,
+            todos: [...Array(20)].map((todo, i) => ({
+                text: `the is my todo number ${i}`,
+                isDone: false
+            }))
+        }))
+    ,
     currentList: null
 
 }
