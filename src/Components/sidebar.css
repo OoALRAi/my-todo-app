@@ -10,23 +10,29 @@
 }
 
 .new-list-button {
-    background-color: #eeeeee;
-    box-shadow: 0px 0px 5px 0px #e1e1e1;
-    border: none;
+    height: 20px;
+
+    background-color: #ffd5d5;
+    box-shadow: 0px 0px 0px 0px #ff9090;
+    border: solid 1px #ff9090;
     width: fit-content;
     justify-self: end;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 8px;
-    padding-left: 8px;
-    padding-right: 8px;
-    padding-top: 4px;
-    padding-bottom: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
     border-radius: 4px;
-    transition: 300ms;
+    transition: 200ms;
 }
 
 .new-list-button:hover {
-    box-shadow: none;
+    background-color: #ffc5c5;
+}
 
+.new-list-button:active {
+    box-shadow: none;
+    background-color: #fea6a6;
 }
 
 .new-list-button-container {
