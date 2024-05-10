@@ -1,4 +1,5 @@
 import { SidebarActions } from "../App";
+import "./sidebar.css"
 export default function ListItem({
     dispatch,
     todoList,
@@ -8,7 +9,7 @@ export default function ListItem({
         dispatch({ type: SidebarActions.SELECT_LIST, data: todoList })
     }
     return (
-        <div onClick={selectItem}>
+        <div className="list-item" onClick={selectItem}>
             <div>
                 {todoList && todoList.text}
             </div>
