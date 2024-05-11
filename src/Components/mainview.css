@@ -11,19 +11,6 @@
     width: 0;
 }
 
-/*
-.mainview-container .todo-list-title::before {
-    position: absolute;
-    top: 40px;
-    content: "";
-    opacity: 50%;
-    background-color: yellow;
-    width: 250px;
-    height: 20px;
-    rotate: 3deg;
-}
-*/
-
 .mainview-container .todo-list-title {
     border: none;
     font-size: 34pt;
@@ -32,6 +19,11 @@
     margin-right: auto;
     margin-bottom: 25px;
     width: 100%;
+}
+
+.mainview-container .todo-list-title:empty::after {
+    content: "Untitled";
+    color: #c1c1c1
 }
 
 .mainview-container .todo-list-title:focus {

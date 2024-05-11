@@ -11,23 +11,18 @@
 
 .new-list-button {
     height: 20px;
-
-    background-color: #ffd5d5;
-    box-shadow: 0px 0px 0px 0px #ff9090;
-    border: solid 1px #ff9090;
     width: fit-content;
     justify-self: end;
     font-weight: bold;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 8px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 4px;
+    border-radius: 100%;
     transition: 200ms;
 }
 
+
 .new-list-button:hover {
-    background-color: #ffc5c5;
+    background-color: #eeeeee;
 }
 
 .new-list-button:active {
@@ -53,7 +48,14 @@
     margin-left: 12px;
     margin-right: 12px;
     margin-bottom: 4px;
-    transition-duration: 300ms;
+    transition: 300ms;
+    border-radius: 4px;
+    padding: 8px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    color: #4a4a4a;
+    min-height: 20px;
+
 
 }
 
@@ -63,4 +65,9 @@
 
 .list-item:active {
     background-color: #e0e0e0;
+}
+
+.selected {
+    background-color: #eeeeee;
+    font-weight: 600;
 }
